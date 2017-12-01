@@ -90,7 +90,7 @@ Matrixh::~Matrixh(void)
 	delete this-> matrix;
 	
 }
-
+//
 //-------------------------------------
 //seters
 
