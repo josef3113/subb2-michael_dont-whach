@@ -1,25 +1,84 @@
 #include "Matrixh.h"
 
 
-
+Matrixh::Matrixh()
+{
+	this->lenght=0;
+	this->width=0;
+	this->matrix=NULL;
+}
 
 Matrixh::Matrixh(int width,int lenght)
 {
+	
 	this->setwidth(width);
 	this->setlenght(lenght);
 	this->matrix=new int* [this->lenght];
+	if(matrix==NULL)
+	{
+		cout<<"the allocation failed, the program will close"<<endl;
+		system("pause");
+		exit(1);
+
+	}
+	else
+	{
 		for (int i=0;i<this->lenght;i++)
 		{
 			this->matrix[i]=new int [this->width];
-			for(int j=0;j<this->width;j++)
-			{
-				this->matrix[i][j]=0;
-			}
+			if(matrix[i]==NULL)
+				{
+					cout<<"the allocation failed ,the program will close"<<endl;
+					system("pause");
+					exit(1);
+				}
+			else
+				{
+					for(int j=0;j<this->width;j++)
+					{
+						this->matrix[i][j]=0;
+					}
+				}
 
+		}
+	}
+
+}
+Matrixh::Matrixh(const Matrixh & copy)      //copy constractor
+{
+	this->lenght=copy.lenght;
+	this->width=copy.width;
+
+	this->matrix=new int* [this->lenght];
+	if(matrix==NULL)
+		{
+			cout<<"the allocation failed, the program will close"<<endl;
+			system("pause");
+			exit(1);
+		}
+	else
+		{
+			for (int i=0;i<this->lenght;i++)
+			{
+				this->matrix[i]=new int [this->width];
+				if(matrix[i]==NULL)
+					{
+						cout<<"the allocation failed ,the program will close"<<endl;
+						system("pause");
+						exit(1);
+					}
+				else
+				{
+					for(int j=0;j<this->width;j++)
+					{
+						this->matrix[i][j]=copy[i][j];
+					}
+				}
+
+			}
 		}
 
 }
-
 
 Matrixh::~Matrixh(void)
 {
@@ -39,7 +98,7 @@ void Matrixh::setlenght(int lenght)
 {
 	if(lenght<=0)
 	{
-		while(lenght>0)
+		while(lenght<=0)
 			{
 				cout<<"leght can't be neg or zero try another"<<endl;
 				cin>>lenght;
@@ -70,44 +129,13 @@ int*& Matrixh::operator[](const int x)const
 	}
 	else
 	{
-		cout<<"illegall= you try change location that not alocated the program will close "<<endl;
+		cout<<"illegall= you try change location that not allocated ,the program will close "<<endl;
 		system("pause");
 		exit(1);
 	}
 }
 	
 
-
-//int*& Matrixh::operator[](const int x)const
-//{
-//	if(x>0&&x<lenght)
-//	{
-//	return matrix[x];
-//	}
-//	else
-//	{
-//		cout<<"illegal active"<<endl;
-//		//return NULL
-//		//return;
-//	}
-//
-//}
-
-//int* Matrixh::operator[](const long y)const
-//{
-//	if(y>0&&y<lenght)
-//	{
-//	return matrix[y];
-//	}
-//	else
-//	{
-//		cout<<"illegal active"<<endl;
-//		//return NULL
-//		//return;
-//	}
-//
-//}
-//
 
 
 
@@ -116,14 +144,23 @@ int*& Matrixh::operator[](const int x)const
 Matrixh&  Matrixh:: operator + (const Matrixh& add)const
 {
 	Matrixh *temp=new Matrixh(this->width,this->lenght);
-
-	for (int i=0;i<this->lenght;i++)
+	if(temp==NULL)
 		{
-			for(int j=0;j<this->width;j++)
-			{
-				temp->matrix[i][j]=this->matrix[i][j]+add[i][j];
-			}
+			cout<<"the allocation failed ,the program will close"<<endl;
+			system("pause");
+			exit(1);
+		}
+	else
+	{
 
+		for (int i=0;i<this->lenght;i++)
+			{
+				for(int j=0;j<this->width;j++)
+				{
+					temp->matrix[i][j]=this->matrix[i][j]+add[i][j];
+				}
+
+			}
 		}
 	
 	return *temp;
@@ -132,13 +169,22 @@ Matrixh&  Matrixh:: operator + (const Matrixh& add)const
 Matrixh& Matrixh:: operator - (const Matrixh& sub)const
 {
 	Matrixh *temp=new Matrixh(this->width,this->lenght);
-	for (int i=0;i<this->lenght;i++)
+	if(temp==NULL)
 		{
-			for(int j=0;j<this->width;j++)
-			{
-				temp->matrix[i][j]=this->matrix[i][j]-sub[i][j];
-			}
+			cout<<"the allocation failed ,the program will close"<<endl;
+			system("pause");
+			exit(1);
+		}
+	else
+		{
+			for (int i=0;i<this->lenght;i++)
+				{
+					for(int j=0;j<this->width;j++)
+					{
+						temp->matrix[i][j]=this->matrix[i][j]-sub[i][j];
+					}
 
+				}
 		}
 	
 	return *temp;
@@ -149,40 +195,59 @@ Matrixh& Matrixh::operator * (const Matrixh& B)const
 {
 	int sum=0;
 	if(this->width!=B.lenght)
-	{
-		cout<<"it's iilegal "<<endl;
-		exit(1) ;
-	}
-	Matrixh *temp=new Matrixh (B.width,this->lenght);
-	
-	for(int i=0;i<this->lenght;i++)
-	{
-		for(int k=0;k<B.width;k++)
 		{
-			for(int j=0;j<this->width;j++)
-			{
-				sum=sum+(this->matrix[i][j]*B[j][k]);
-			}
-			temp->matrix[i][k]=sum;
-			sum=0;
+			cout<<"it's invalid operation ,the program will close "<<endl;
+			system("pause");
+			exit(1) ;
 		}
+	Matrixh *temp=new Matrixh (B.width,this->lenght);
+	if(temp==NULL)
+		{
+			cout<<"the allocation failed ,the program will close"<<endl;
+			system("pause");
+			exit(1);
+		}
+	else
+	{
 	
+			for(int i=0;i<this->lenght;i++)
+			{
+				for(int k=0;k<B.width;k++)
+				{
+					for(int j=0;j<this->width;j++)
+					{
+						sum=sum+(this->matrix[i][j]*B[j][k]);
+					}
+					temp->matrix[i][k]=sum;
+					sum=0;
+				}
+	
+			}
+			return *temp;
 	}
-	return *temp;
 
 }
 
 Matrixh& Matrixh::operator * (const int& B)const
 {
 	Matrixh *temp=new Matrixh (this->width,this->lenght);
-	for(int i=0;i<this->lenght;i++)
-	{
-		for(int j=0;j<this->width;j++)
+	if(temp==NULL)
 		{
-			temp->matrix[i][j]=B*this->matrix[i][j];
+			cout<<"the allocation failed ,the program will close"<<endl;
+			system("pause");
+			exit(1);
 		}
-	}
-	return (*temp);
+	else
+		{
+			for(int i=0;i<this->lenght;i++)
+			{
+				for(int j=0;j<this->width;j++)
+				{
+					temp->matrix[i][j]=B*this->matrix[i][j];
+				}
+			}
+			return *temp;
+		}
 }
 void Matrixh::operator=(const Matrixh&  put)
 {
@@ -198,6 +263,12 @@ void Matrixh::operator=(const Matrixh&  put)
 			{
 				delete matrix[i];
 				matrix[i]=new int [width];
+				if(matrix[i]==NULL)
+				{
+					cout<<"the allocation failed ,the program will close"<<endl;
+		            system("pause");
+		            exit(1);
+				}
 			}
 		}
 	}
@@ -212,10 +283,25 @@ void Matrixh::operator=(const Matrixh&  put)
 		this->lenght=put.lenght;    //תעדכן אורך ורוחב 
 	    this->width=put.width;
 
-		matrix=new int*[lenght];     //תקצה מחדש את המקום למטריצה 
-		for(int i=0;i<lenght;i++)
+		matrix=new int*[lenght];  //תקצה מחדש את המקום למטריצה 
+		if(matrix==NULL)
+			{
+				cout<<"the allocation failed ,the program will close"<<endl;
+				system("pause");
+				exit(1);
+			}
+		else
 		{
-			matrix[i]=new int [width];
+				for(int i=0;i<lenght;i++)
+				{
+					matrix[i]=new int [width];
+					if(matrix[i]==NULL)
+					{
+						cout<<"the allocation failed ,the program will close"<<endl;
+		                system("pause");
+		                exit(1);
+					}
+				}
 		}
 	}
 	

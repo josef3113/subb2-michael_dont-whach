@@ -1,27 +1,32 @@
 #include"Matrixh.h"
-//
-//
+
+
 //void main()
 //{
-//	Matrixh matrixA(2,3),matrixB(3,2),matrixC(1,1);
+//	Matrixh matrixA(2,3),matrixB(3,2),matrixC(0,0);
 //	matrixA[2][0]=9;
 //	matrixA[0][0]=4;
-//	//x=matrix[0][0];
-//	//cout<<"x"<<x<<endl;
+//	matrixB[0][0]=8;
+//	matrixB[0][1]=8;
+//	matrixB[0][2]=6;
+//	matrixB[1][1]=8;
+//	matrixB[1][0]=7;
+//	matrixB[0][0]=9;
 //	matrixA=matrixA+matrixA;
 //	cout<<matrixA;
 //	matrixA=matrixA-matrixA;
+//	cout<<matrixC;
 //    matrixC=matrixA*matrixB;
 //	cout<<matrixC;
 //	matrixA=matrixA*5;
 //	cout<<matrixA;
 //	matrixA=-matrixA;
 //	cout<<matrixA;
-//    //cin>>x;
 //	system("pause");
 //}
 
-void main(){
+void main()
+{
 Matrixh m(2, 2);
 m[0][0] = 2;
 m[1][1] = 2;

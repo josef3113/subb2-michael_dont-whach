@@ -9,16 +9,20 @@ private :
 	int ** matrix;
 	int width;
 	int lenght;
-public:
 
-	Matrixh(int whidth=1 ,int lenght=1 );
+	void setwidth(int);        //בכוונה בפרייבט כדי שלא יוכלו לשנות גודל והכל יהרס
+	void setlenght(int);       //אפשר לשנות מימוש בהוספת אפסים
+
+public:
+	Matrixh();
+	Matrixh(int  ,int );
+	Matrixh(const Matrixh&);        //copy constractor
 	~Matrixh(void);
 
-	//int getwidth();
-	//int getlenght();
+	int getwidth(){return width;}
+	int getlenght(){return lenght;}
 
-	void setwidth(int);
-	void setlenght(int);
+	
 
 	Matrixh& operator + (const Matrixh&)const;
 	Matrixh& operator - (const Matrixh&)const;
