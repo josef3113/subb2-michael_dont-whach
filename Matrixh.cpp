@@ -13,7 +13,7 @@ Matrixh::Matrixh(int width,int lenght)
 			this->matrix[i]=new int [this->width];
 			for(int j=0;j<this->width;j++)
 			{
-				matrix[i][j]=0;
+				this->matrix[i][j]=0;
 			}
 
 		}
@@ -116,12 +116,12 @@ int*& Matrixh::operator[](const int x)const
 Matrixh&  Matrixh:: operator + (const Matrixh& add)const
 {
 	Matrixh *temp=new Matrixh(this->width,this->lenght);
-	//Matrixh temp(add.width,add.lenght);
+
 	for (int i=0;i<this->lenght;i++)
 		{
 			for(int j=0;j<this->width;j++)
 			{
-				temp->matrix[i][j]=this->matrix[i][j]+add.matrix[i][j];
+				temp->matrix[i][j]=this->matrix[i][j]+add[i][j];
 			}
 
 		}
@@ -136,7 +136,7 @@ Matrixh& Matrixh:: operator - (const Matrixh& sub)const
 		{
 			for(int j=0;j<this->width;j++)
 			{
-				temp->matrix[i][j]=this->matrix[i][j]-sub.matrix[i][j];
+				temp->matrix[i][j]=this->matrix[i][j]-sub[i][j];
 			}
 
 		}
@@ -161,7 +161,7 @@ Matrixh& Matrixh::operator * (const Matrixh& B)const
 		{
 			for(int j=0;j<this->width;j++)
 			{
-				sum=sum+(this->matrix[i][j]*B.matrix[j][k]);
+				sum=sum+(this->matrix[i][j]*B[j][k]);
 			}
 			temp->matrix[i][k]=sum;
 			sum=0;
@@ -226,7 +226,7 @@ void Matrixh::operator=(const Matrixh&  put)
    {
       for (int j=0;j<width;j++)
 	  {
-		  matrix[i][j]=put.matrix[i][j];
+		  matrix[i][j]=put[i][j];
 	  }
    }
 }
@@ -249,7 +249,7 @@ ostream& operator << (ostream &out,const Matrixh& toprint)
 	{
 		for(int j=0;j<toprint.width;j++)
 		{
-			out<<toprint.matrix[i][j]<<"     ";
+			out<<toprint[i][j]<<"     ";
 		}
 		out<<endl;
 	}
