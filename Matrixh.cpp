@@ -121,6 +121,9 @@ void Matrixh::setwidth(int width)
 	this->width=width;
 
 }
+//------------------------
+//operators
+
 int*& Matrixh::operator[](const int x)const
 {
 	if(x>-1 && x<lenght)
@@ -129,7 +132,7 @@ int*& Matrixh::operator[](const int x)const
 	}
 	else
 	{
-		cout<<"illegall= you try change location that not allocated ,the program will close "<<endl;
+		cout<<"invalid operation= you try change location that not allocated ,the program will close "<<endl;
 		system("pause");
 		exit(1);
 	}
@@ -318,7 +321,7 @@ void Matrixh::operator=(const Matrixh&  put)
 }
 
 
-Matrixh& operator * (const int B,const Matrixh & mul)
+Matrixh& operator * (const int &B,const Matrixh & mul)
 {
 	return mul*B;
 }

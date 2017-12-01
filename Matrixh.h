@@ -19,8 +19,8 @@ public:
 	Matrixh(const Matrixh&);        //copy constractor
 	~Matrixh(void);
 
-	int getwidth(){return width;}
-	int getlenght(){return lenght;}
+	int getwidth()const{return width;}
+	int getlenght()const{return lenght;}
 
 	
 
@@ -32,7 +32,7 @@ public:
 	int*& operator [](const int)const;
 
 	friend ostream& operator << (ostream &out,const Matrixh&);
-	friend Matrixh& operator * (const int B,const Matrixh & mul);
+	friend Matrixh& operator * (const int & B,const Matrixh & mul);
 	friend Matrixh& operator - (const Matrixh & neg);
 
 
