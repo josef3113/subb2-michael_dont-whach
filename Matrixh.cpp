@@ -171,26 +171,8 @@ Matrixh&  Matrixh:: operator + (const Matrixh& add)const
 
 Matrixh& Matrixh:: operator - (const Matrixh& sub)const
 {
-	Matrixh *temp=new Matrixh(this->width,this->lenght);
-	if(temp==NULL)
-		{
-			cout<<"the allocation failed ,the program will close"<<endl;
-			system("pause");
-			exit(1);
-		}
-	else
-		{
-			for (int i=0;i<this->lenght;i++)
-				{
-					for(int j=0;j<this->width;j++)
-					{
-						temp->matrix[i][j]=this->matrix[i][j]-sub[i][j];
-					}
 
-				}
-		}
-	
-	return *temp;
+	return (*this)+(-sub);
 	
 }
 
