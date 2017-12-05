@@ -2,9 +2,9 @@
 //
 
 //void main()
-//{
-//	Matrixh matrixA(2,3),matrixB(3,2),matrixC(0,0);
-//	matrixA[2][0]=9;
+//{ 
+//	Matrixh matrixA(2,2),matrixB(3,2),matrixC;
+//	//matrixA[2][0]=9;
 //	matrixA[0][0]=4;
 //	matrixB[0][0]=8;
 //	matrixB[0][1]=8;
@@ -12,16 +12,18 @@
 //	matrixB[1][1]=8;
 //	matrixB[1][0]=7;
 //	matrixB[0][0]=9;
-//	matrixA=matrixA+matrixA;
-//	cout<<matrixA;
-//	matrixA=matrixA-matrixA;
+//	matrixC=matrixA*matrixB;
 //	cout<<matrixC;
-//    matrixC=matrixA*matrixB;
-//	cout<<matrixC;
-//	matrixA=matrixA*5;
-//	cout<<matrixA;
-//	matrixA=-matrixA;
-//	cout<<matrixA;
+//	//matrixA=matrixA-matrixA;
+//	//cout<<matrixC;
+//    matrixC=matrixA*5;
+//	//cout<<matrixC<<endl;
+//	//cout<<matrixC;
+//	//matrixA=matrixA*5;
+//	//cout<<matrixA;
+//	//matrixA=-matrixA;
+//	//cout<<matrixA;
+//	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF|_CRTDBG_LEAK_CHECK_DF);
 //	system("pause");
 //}
 

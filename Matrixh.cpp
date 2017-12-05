@@ -124,7 +124,7 @@ void Matrixh::setwidth(int width)
 //------------------------
 //operators
 
-int*& Matrixh::operator[](const int x)const
+int* Matrixh::operator[](const int x)const
 {
 	if(x>-1 && x<lenght)
 	{
@@ -144,29 +144,29 @@ int*& Matrixh::operator[](const int x)const
 
 
 
-Matrixh&  Matrixh:: operator + (const Matrixh& add)const
+Matrixh  Matrixh:: operator + (const Matrixh& add)const
 {
-	Matrixh *temp=new Matrixh(this->width,this->lenght);
-	if(temp==NULL)
+	Matrixh temp(this->width,this->lenght);
+	/*if(temp==NULL)
 		{
 			cout<<"the allocation failed ,the program will close"<<endl;
 			system("pause");
 			exit(1);
 		}
 	else
-	{
+	{*/
 
 		for (int i=0;i<this->lenght;i++)
 			{
 				for(int j=0;j<this->width;j++)
 				{
-					temp->matrix[i][j]=this->matrix[i][j]+add[i][j];
+					temp[i][j]=this->matrix[i][j]+add[i][j];
 				}
 
 			}
-		}
+     // }
 	
-	return *temp;
+	return temp;
 }
 
 Matrixh& Matrixh:: operator - (const Matrixh& sub)const
