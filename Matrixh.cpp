@@ -85,7 +85,7 @@ Matrixh::Matrixh(const Matrixh & copy)      //copy constractor
 			{
 				this->matrix[i]=new int [this->width];
 
-				if(matrix[i]==NULL)     //check if allocation  succeeded for all row 
+				if(matrix[i]==NULL)     //check if allocation  succeeded for every row 
 					{
 						cout<<"the allocation failed ,the program will close"<<endl;
 						system("pause");
@@ -214,18 +214,18 @@ Matrixh Matrixh::operator * (const int& B)const
 
 Matrixh& Matrixh::operator=(const Matrixh&  put)
 {
-	if(this->lenght==put.lenght)   //if the lenght equal so there is no ned to do new allocation for row 
+	if(this->lenght==put.lenght)   //if the lenght equal so there is no need to do new allocation for row 
 	{
-		if (width!=put.width)      //but if width not equal so have need to do new allocation for evrey row in size of whidth
+		if (width!=put.width)      //but if width not equal have need to do new allocation for evrey row in size of whidth
 		{
 			
 	     this->width=put.width;           
 
 			for (int i=0;i<lenght;i++)
 			{
-				delete matrix[i];     // deletion of the old allocation 
+				delete matrix[i];     // deletion of the old allocation for every row
 
-				matrix[i]=new int [width];  
+				matrix[i]=new int [width];  //and new allocation in new width
 				if(matrix[i]==NULL)
 				{
 					cout<<"the allocation failed ,the program will close"<<endl;

@@ -17,7 +17,7 @@ public:
 	Matrixh(const Matrixh&);        //copy constractor
 	~Matrixh(void);
 
-	//----getrs
+	//----getrs             not exist seters because after the matrix exist i can't change the size 
 
 	int getwidth()const{return width;}
 	int getlenght()const{return lenght;}
