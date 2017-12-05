@@ -216,7 +216,7 @@ Matrixh& Matrixh::operator=(const Matrixh&  put)
 {
 	if(this->lenght==put.lenght)   //if the lenght equal so there is no need to do new allocation for row 
 	{
-		if (width!=put.width)      //but if width not equal have need to do new allocation for evrey row in size of whidth
+		if (width!=put.width)      //but if width not equal have need to do new allocation for evrey row in size of new whidth 
 		{
 			
 	     this->width=put.width;           

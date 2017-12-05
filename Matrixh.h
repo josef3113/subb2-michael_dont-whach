@@ -35,10 +35,15 @@ public:
 
 	friend ostream& operator << (ostream &out,const Matrixh&);
 	friend Matrixh operator * (const int & B,const Matrixh & mul);
-	friend Matrixh operator - (const Matrixh & neg);
+	
 
 
 
 
 };
+
+//-----not must to be friend of Matrixh class
+
+ Matrixh operator - (const Matrixh & neg);                       
+ Matrixh operator * (const int & B,const Matrixh & mul);
 
