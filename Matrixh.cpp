@@ -104,7 +104,7 @@ Matrixh::Matrixh(const Matrixh & copy)      //copy constractor
 
 }
 
-Matrixh::~Matrixh(void)
+Matrixh::~Matrixh()
 {
 	for (int i=0;i<this->lenght;i++)
 		{

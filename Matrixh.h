@@ -15,7 +15,7 @@ public:
 	Matrixh();                      //defult constractor
 	Matrixh(int  ,int );
 	Matrixh(const Matrixh&);        //copy constractor
-	~Matrixh(void);
+	virtual ~Matrixh();         //prepartion to polymorphism
 
 	//----getrs             not exist seters because after the matrix exist i can't change the size 
 
