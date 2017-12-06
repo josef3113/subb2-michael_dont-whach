@@ -66,7 +66,7 @@ Matrixh::Matrixh(int lenght,int width)
 	}
 
 }
-Matrixh::Matrixh(const Matrixh & copy)      //copy constractor
+Matrixh::Matrixh(const Matrixh & copy)      // copy constractor
 {
 	this->lenght=copy.lenght;
 	this->width=copy.width;

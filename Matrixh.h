@@ -31,7 +31,7 @@ public:
 	Matrixh& operator =(const Matrixh&);
 	int* operator [](const int&)const;
 
-	//----friends
+	//-----friends
 
 	friend ostream& operator << (ostream &out,const Matrixh&);
 	
