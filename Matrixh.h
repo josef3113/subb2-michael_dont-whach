@@ -34,7 +34,6 @@ public:
 	//----friends
 
 	friend ostream& operator << (ostream &out,const Matrixh&);
-	friend Matrixh operator * (const int & B,const Matrixh & mul);
 	
 
 

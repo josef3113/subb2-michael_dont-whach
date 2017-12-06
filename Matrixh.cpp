@@ -285,16 +285,6 @@ Matrixh& Matrixh::operator=(const Matrixh&  put)
 //----friends 
 
 
-Matrixh operator * (const int &B,const Matrixh & mul)
-{
-	return mul*B;
-}
-
-Matrixh operator - (const Matrixh & neg)
-{
-	return neg*(-1);
-}
-
 
 ostream& operator << (ostream &out,const Matrixh& toprint)
 {
@@ -307,4 +297,17 @@ ostream& operator << (ostream &out,const Matrixh& toprint)
 		out<<endl;
 	}
 	return out;
+}
+
+
+//-------function
+
+Matrixh operator * (const int &B,const Matrixh & mul)
+{
+	return mul*B;
+}
+
+Matrixh operator - (const Matrixh & neg)
+{
+	return neg*(-1);
 }
