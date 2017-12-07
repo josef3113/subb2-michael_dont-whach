@@ -1,4 +1,6 @@
-#pragma once
+#ifndef Matrix_h
+#define Matrix_h
+
 #include <iostream>
 using namespace std;
 //
@@ -45,4 +47,7 @@ public:
 
  Matrixh operator - (const Matrixh & neg);                       
  Matrixh operator * (const int & B,const Matrixh & mul);
+
+
+#endif
 
