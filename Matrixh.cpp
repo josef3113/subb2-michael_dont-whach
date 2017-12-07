@@ -102,10 +102,10 @@ Matrixh::~Matrixh()
 {
 	for (int i=0;i<this->lenght;i++)
 	{
-		delete this->matrix[i];
+		delete[] this->matrix[i];
 
 	}
-	delete this-> matrix;
+	delete[] this-> matrix;
 
 }
 
