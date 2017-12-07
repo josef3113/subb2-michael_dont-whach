@@ -138,6 +138,13 @@ int* Matrixh::operator[](const int & x)const
 
 Matrixh  Matrixh:: operator + (const Matrixh& add)const
 {
+	if( (this->lenght!= add.lenght) ||  (this->width!=add.width)  )
+	{
+		cout<<"the matrix are not compatiable, the first matrix was returnd "<< endl;
+		return (*this);
+
+	}
+
 	Matrixh temp(this->width,this->lenght);
 
 	for (int i=0;i <  this->lenght  ;i++)
@@ -164,13 +171,15 @@ Matrixh Matrixh:: operator - (const Matrixh& sub)const
 
 Matrixh Matrixh::operator * (const Matrixh& B)const
 {
-	int sum=0;
+	
 	if(this->width!=B.lenght)
 	{
-		cout<<"it's invalid operation ,the program will close "<<endl;
-		system("pause");
-		exit(1) ;
+		cout<<"it's invalid operation ,the first matrix was returnd "<< endl; 
+		return (*this);
+		
 	}
+
+	int sum=0;
 	Matrixh temp (B.width,this->lenght);
 
 	for(int i=0;i < this->lenght ;i++)

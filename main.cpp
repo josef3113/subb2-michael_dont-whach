@@ -13,6 +13,8 @@ void main()
 	m = s + 2 * -m * m * 2 - s;
 	cout << m << endl << s << endl;
 	cout << s[1][1] << endl;
+
 	system("pause");
+	
 }
 

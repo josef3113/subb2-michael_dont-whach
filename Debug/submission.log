@@ -1,4 +1,4 @@
-﻿Build started 12/7/2017 1:17:31 PM.
+﻿Build started 12/7/2017 6:27:52 PM.
      1>Project "C:\Users\josef\Documents\Visual Studio 2010\Projects\gg\submission\submission\submission.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\submission.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -19,4 +19,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.89
+Time Elapsed 00:00:00.88
