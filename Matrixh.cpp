@@ -1,7 +1,7 @@
 #include "Matrixh.h"
 
 
-Matrixh::Matrixh()         //defult constractor
+Matrixh::Matrixh()          //defult constractor
 {
 	this->lenght=0;
 	this->width=0;

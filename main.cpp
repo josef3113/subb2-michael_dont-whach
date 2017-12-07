@@ -15,6 +15,6 @@ void main()
 	cout << s[1][1] << endl;
 
 	system("pause");
-	
+	 
 }
 
