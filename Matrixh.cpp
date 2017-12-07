@@ -17,6 +17,7 @@ Matrixh::Matrixh(int lenght,int width)
 		this->width=0;
 		this->matrix=NULL;
 		skip = true;
+		cout<<"one of value was wrongful so matrix not allocation"<<endl;
 	}
 
 	if(!skip)
