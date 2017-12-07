@@ -216,7 +216,7 @@ Matrixh& Matrixh::operator=(const Matrixh&  put)
 
 			for (int i=0;i<lenght;i++)
 			{
-				delete matrix[i];     // deletion of the old allocation for every row
+				delete matrix[i];     //  deletion of the old allocation for every row
 
 				matrix[i]=new int [width];  //and new allocation in new width
 				if(matrix[i]==NULL)
